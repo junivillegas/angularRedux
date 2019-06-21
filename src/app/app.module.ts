@@ -1,3 +1,5 @@
+// Los modulos van siempre en los imports
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +15,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
+
+// ngrx
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { appReducers } from './app.reducer';
+
 
 // Angular Fire Module
 import { AngularFireModule } from '@angular/fire';
@@ -35,6 +43,11 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot(appReducers), // Sin { } cuando es un reducerMap
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
