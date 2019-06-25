@@ -77,7 +77,6 @@ export class AuthService {
               confirmButtonText: 'Ok'
             });
           });
-
       })
       .catch(resp => {
         this.store.dispatch( new DesactivarLoadingAction () );
