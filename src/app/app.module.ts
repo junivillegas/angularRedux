@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { IngregoEgresoComponent } from './ingrego-egreso/ingrego-egreso.component';
-import { DetalleComponent } from './ingrego-egreso/detalle/detalle.component';
-import { EstadisticaComponent } from './ingrego-egreso/estadistica/estadistica.component';
+import { IngresoEgresoComponent } from './ingreso-egreso/ingrego-egreso.component';
+import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
+import { EstadisticaComponent } from './ingreso-egreso/estadistica/estadistica.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -34,7 +34,7 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    IngregoEgresoComponent,
+    IngresoEgresoComponent,
     DetalleComponent,
     EstadisticaComponent,
     FooterComponent,
