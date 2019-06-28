@@ -2,7 +2,7 @@ export class IngresoEgresoModel {
   descripcion: string;
   monto: number;
   tipo: string;
-  uid?: string;
+  uid: string;
 
   constructor(obj: ObjModel) {
     this.descripcion = obj && obj.descripcion || null;
@@ -16,5 +16,5 @@ interface ObjModel {
   descripcion: string;
   monto: number;
   tipo: string;
-  uid?: string;
+  uid: string;
 }

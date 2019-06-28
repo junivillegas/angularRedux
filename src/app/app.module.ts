@@ -21,6 +21,9 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { appReducers } from './app.reducer';
 
+// Charts
+import { ChartsModule } from 'ng2-charts';
+
 
 // Angular Fire Module
 import { AngularFireModule } from '@angular/fire';
@@ -54,6 +57,7 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
