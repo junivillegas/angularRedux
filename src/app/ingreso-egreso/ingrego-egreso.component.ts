@@ -8,6 +8,7 @@ import { AppState } from '../app.reducer';
 import { Subscription } from 'rxjs';
 import { ActivarLoadingAction, DesactivarLoadingAction } from '../shared/ui.accions';
 
+import * as fromIngresoEgreso from '../ingreso-egreso/ingreso-egreso.reducer';
 
 @Component({
   selector: 'app-ingreso-egreso',
@@ -23,7 +24,7 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
   cargando: boolean;
 
   constructor(private ieService: IngresoEgresoService,
-              private store: Store<AppState>) { }
+              private store: Store<fromIngresoEgreso.AppState>) { }
 
   ngOnInit() {
     this.form = new FormGroup({

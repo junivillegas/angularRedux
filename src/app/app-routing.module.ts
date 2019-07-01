@@ -1,22 +1,24 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-
-import { dashboardRouters } from './dashboard/dashboard.routes';
-
-// Seguridad de autenticado
 import { AuthGuardService } from './auth/auth-guard.service';
 
+  //   // Asi se usa el Lazy Load
+
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent,
+  canDeactivate: [ !AuthGuardService ] },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    canDeactivate: [ !AuthGuardService ]
+  },
   {
     path: '',
-    component: DashboardComponent,
-    children: dashboardRouters,
-    canActivate: [AuthGuardService]
+    loadChildren: () => import('./ingreso-egreso/ingreso-egreso.module')
+      .then(m => (m.IngresoEgresoModule)),
+    canLoad: [ AuthGuardService ]
   },
   { path: '**', redirectTo: '' } // Cualquier pagina redirecciona a
 ];

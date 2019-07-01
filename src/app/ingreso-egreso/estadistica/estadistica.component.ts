@@ -6,6 +6,9 @@ import { IngresoEgresoModel } from '../ingreso-egreso.model';
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label } from 'ng2-charts';
 
+import * as fromIngresoEgreso from '../../ingreso-egreso/ingreso-egreso.reducer';
+
+
 @Component({
   selector: 'app-estadistica',
   templateUrl: './estadistica.component.html',
@@ -25,7 +28,7 @@ export class EstadisticaComponent implements OnInit {
 
   public ingresosEgresosSubs: Subscription = new Subscription();
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<fromIngresoEgreso.AppState>) { }
 
   ngOnInit() {
     this.ingresosEgresosSubs = this.store.select('ingresoEgreso')
